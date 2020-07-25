@@ -27,6 +27,16 @@ The production version of this microservice is deployed to [https://hifu-authori
 ### Endpoints
 
 - get `/sheriff` 
-   - parameters:
-     - `lat`
-     - `long`
+  - parameters:
+    - `lat`
+    - `long`
+- Response example:
+  
+```json
+
+"formatted_address":"101 S Kansas Ave, Norton, KS 67654, United States",
+"name":"Norton County Sheriff Office",
+"place_id":"ChIJf3EMNpJ1n4cRqsgMc5ZtzHc",
+"phone":"(785) 877-5780"
+
+```
