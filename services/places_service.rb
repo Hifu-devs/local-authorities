@@ -3,13 +3,16 @@ require 'dotenv'
 Dotenv.load
 
 class PlacesService
-  def sheriff_search(coords)
+
+  def sheriff_search(coords = {})
     response = conn.get('') do |g|
       g.params['input'] = 'sheriff'
       g.params['inputtype'] = 'textquery'
       g.params['fields'] = 'name,formatted_address,place_id'
-      g.params['locationbias'] = 'point:' + coords[lat] ',' + coords[long]
+      g.params['locationbias'] = 'point:' + coords['lat'] + ',' + coords['long']
     end
+    
+    JSON.parse(response.body)['candidates']
   end
 
   private

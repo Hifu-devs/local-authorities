@@ -2,6 +2,9 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/base'
 require 'json'
+require './services/places_service'
+# require './servcies/place_details_service'
+require 'pry'
 
 class LocalAuthorities < Sinatra::Base
 
@@ -10,7 +13,7 @@ class LocalAuthorities < Sinatra::Base
   end
 
   get '/sheriff' do
-    pry
+    PlacesService.new.sheriff_search(request.params)
   end
 
 end
