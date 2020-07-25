@@ -12,7 +12,7 @@ class PlacesService
       g.params['locationbias'] = 'point:' + coords['lat'] + ',' + coords['long']
     end
     
-    JSON.parse(response.body)['candidates']
+    JSON.parse(response.body)['candidates'].first
   end
 
   private
